@@ -34,6 +34,28 @@ profile_router.get("/", function (req, res) {
         fluency: 100,
       },
     ],
+    educations: [
+      {
+        institution: "Islamic University of Technology",
+        period: "2019 - Ongoing",
+        degree: "BSc in Software Engineering",
+        description: "Specialization of software development",
+      },
+    ],
+    workExperiences: [
+      {
+        title: "Python developer",
+        period: "2019 - current",
+        description:
+          "Adept at python for server-side development and machine learning applications",
+      },
+      {
+        title: "Javascript developer",
+        period: "2020 - current",
+        description:
+          "Adept at web design with svelte, p5 and react.",
+      },
+    ],
   };
   res.render("profile", userData);
 });
