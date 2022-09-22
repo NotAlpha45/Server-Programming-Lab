@@ -8,6 +8,7 @@ const app = express();
 // Setting the view engine to ejs and the static folder for images
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+// app.use(express.)
 
 app.get("/", function (req, res) {
   res.send("Hello world");
