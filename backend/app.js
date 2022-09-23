@@ -20,16 +20,12 @@ mongoose
     console.log(err);
   });
 
-const database = mongoose.connection;
-database.once("open", function () {
-  console.log("connection enabled");
-});
-
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
+
 app.use("/", router);
 
 app.listen(port, function () {
