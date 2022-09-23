@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const db_url =
   process.env.DATABASE_URL ||
-  "mongodb+srv://maheen:maheen123@cluster0.uoc1c.mongodb.net/test";
+  "mongodb+srv://maheen:maheen123@cluster0.uoc1c.mongodb.net/book_database";
 
 mongoose
   .connect(db_url, {

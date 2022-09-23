@@ -9,5 +9,5 @@ const book_model_schema = new Schema({
   book_genre: String,
 });
 
-const bookmodel = mongoose.model("bookmodel", book_model_schema);
-export default bookmodel;
+const BookModel = mongoose.model("BookModel", book_model_schema);
+export default BookModel;
