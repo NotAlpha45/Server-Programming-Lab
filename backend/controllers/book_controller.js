@@ -1,18 +1,18 @@
 import BookModel from "../models/book_schema.js";
 
-const show_books = function (req, res) {
-  res.render("table.ejs");
+const show_book_form = function (req, res) {
+  res.render("book_form.ejs");
 };
 
-const post_books = function (req, res) {
+const post_books = async function (req, res) {
   const book = new BookModel({
-    book_id: req.body.id,
+    book_id: Number(req.body.id),
     book_name: req.body.name,
     book_author: req.body.author,
     book_genre: req.body.genre,
   });
 
-  book
+  await book
     .save()
     .then(function () {
       console.log("Book saved successfully!");
@@ -25,15 +25,10 @@ const post_books = function (req, res) {
     });
 };
 
-const get_books = function (req, res) {
-  const books = BookModel.find({}, function (err, books) {
-    if (err) {
-      console.log(err);
-      res.redirect("/books");
-    } else {
-      res.render("table.ejs", books);
-    }
-  });
+const get_books = async function (req, res) {
+  const books = await BookModel.find({});
+  
+  res.render("table.ejs", { book_data: books });
 };
 
-export { show_books, post_books };
+export { show_book_form, post_books, get_books };
